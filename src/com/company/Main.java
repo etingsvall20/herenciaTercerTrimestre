@@ -1,6 +1,5 @@
 package com.company;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 public class Main {
@@ -12,9 +11,9 @@ public class Main {
             Persona persona = new Persona();
 
             persona.canviarNom("Joe");
-            persona.assignarDni("66655544j");
+            persona.assignarDni("66655544J");
 
-            //persona.assignarDni("");
+            persona.assignarDni("");
 
             persona.obtenirDades();
 
@@ -36,7 +35,7 @@ public class Main {
 
             professor.canviarNom("David");
             professor.assignarDni("11155533D");
-            //professor.canviarSou(-0.5);
+            professor.canviarSou(-0.5);
 
             //professor1.obtenirDades();
 
@@ -44,17 +43,17 @@ public class Main {
             ProfessorSubstitut professorSubstitut = new ProfessorSubstitut();
             professorSubstitut.assignarSubstitucio(new SimpleDateFormat("yyyy-MM-dd").parse("2022-04-01"), new SimpleDateFormat("yyyy-MM-dd").parse("2022-05-20"));
 
-            professorSubstitut.canviarNom("Alex");
-            professorSubstitut.assignarDni("66677788A");
+            professorSubstitut.canviarNom("Laura");
+            professorSubstitut.assignarDni("66677788L");
             professorSubstitut.canviarSou(1923.87);
 
             // Institut
             Institut institut = new Institut();
 
-            institut.afegirProfessor(professor);
+            institut.afegirProfe(professor);
             institut.afegirEstudiant(estudiant1);
             institut.afegirEstudiant(estudiant2);
-            institut.afegirProfessor(professorSubstitut);
+            institut.afegirProfe(professorSubstitut);
 
             institut.imprimirInformacio();
 

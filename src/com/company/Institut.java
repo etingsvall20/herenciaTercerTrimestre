@@ -1,7 +1,7 @@
 package com.company;
 
 import java.sql.Array;
-import java.util.arrayList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Institut {
@@ -9,7 +9,7 @@ public class Institut {
     private String nom;
     private final List<Persona> personas = new ArrayList<>();
 
-    public static void afegirProfe(Professor professor) {
+    public void afegirProfe(Professor professor) {
         this.personas.add(professor);
     }
 
@@ -22,7 +22,5 @@ public class Institut {
         for (Persona persona : this.personas) {
             persona.obtenirDades();
         }
-
     }
-
 }
