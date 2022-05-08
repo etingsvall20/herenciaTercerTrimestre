@@ -4,14 +4,15 @@ public class Persona {
 
     private String dni;
     private String nom;
+    private boolean registre = false;
 
-    public void canviarNom(String nomAssignat) {
+    public void canviarNomPersona(String nomAssignat) {
         nomAssignat = this.nom;
     }
 
     public void assignarDni(String dniAssignat) throws Exception {
 
-        if (this.dni != null) {
+        if (this.dni != null && !"".equals(this.dni)) {
             throw new Exception ("No es pot canviar un dni ja assignat.");
         }
 
@@ -19,17 +20,22 @@ public class Persona {
 
     }
 
-    public void obtenirDades() throws Exception {
+    public String obtenirDades() throws Exception {
 
-        if (this.nom == null) {
-            throw new Exception ("Aquesta persona no ha facilitat nom.");
+        if (this.nom == null || !registre && "".equals(this.nom)) {
+            throw new Exception("Aquesta persona no ha facilitat nom.");
         }
 
-        if (this.dni == null) {
-            throw new Exception ("Aquesta persona no ha facilitat dni.");
+        if (this.dni == null || !registre && "".equals(this.dni)) {
+            throw new Exception("Aquesta persona no ha facilitat dni.");
         }
 
-        System.out.println("Nom: " + this.nom);
-        System.out.println("Dni: " + this.dni);
+        return "Nom: " + this.nom + "Dni: " + this.dni;
+
     }
+
+    public void setRegistre (boolean registre) {
+        this.registre = registre;
+    }
+
 }

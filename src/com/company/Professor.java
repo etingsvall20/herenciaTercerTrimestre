@@ -6,7 +6,7 @@ public class Professor extends Persona{
 
     public void canviarSou (Double souAssignat) throws Exception {
 
-        if (souAssignat > 3000 | souAssignat < 0) {
+        if (3000 < souAssignat || 0 > souAssignat) {
             throw new Exception ("Sou incorrecte.");
         }
 
@@ -15,9 +15,8 @@ public class Professor extends Persona{
     }
 
     @Override
-    public void obtenirDades() throws Exception {
-        super.obtenirDades();
-        System.out.println("Sou: " + this.sou);
+    public String obtenirDades() throws Exception {
+        return super.obtenirDades() + "Sou: " + this.sou;
     }
 
 }

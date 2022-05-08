@@ -6,60 +6,88 @@ public class Main {
 
     public static void main(String[] args) throws Exception{
 
-        try {
+            //Institut
+            Institut institut1 = new Institut();
+            institut1.canviarNom("La Guineueta.");
+
             // Persona
-            Persona persona = new Persona();
+            Persona persona1 = new Persona();
 
-            persona.canviarNom("Joe");
-            persona.assignarDni("66655544J");
-
-            persona.assignarDni("");
-
-            persona.obtenirDades();
+            persona1.canviarNomPersona("Joe");
+            persona1.assignarDni("66655544J");
 
             // Estudiants
             Estudiant estudiant1 = new Estudiant();
 
-            estudiant1.canviarNom("Victor");
+            estudiant1.canviarNomPersona("Victor");
             estudiant1.assignarDni("99944477V");
-            estudiant1.posarNota(7.5);
+            estudiant1.posarNota("Fusteria", 7.5);
 
             Estudiant estudiant2 = new Estudiant();
 
-            estudiant2.canviarNom("Jaime");
+            estudiant2.canviarNomPersona("Rodrigo");
             estudiant2.assignarDni("44044016F");
-            estudiant2.posarNota(0d);
+            estudiant2.posarNota("Llenguatge de marques", 0d);
 
             // Professor
-            Professor professor = new Professor();
+            Professor professor1 = new Professor();
 
-            professor.canviarNom("David");
-            professor.assignarDni("11155533D");
-            professor.canviarSou(-0.5);
-
-            //professor1.obtenirDades();
+            professor1.canviarNomPersona("David");
+            professor1.assignarDni("11155533D");
+            professor1.canviarSou(1500.3);
 
             // Professor Substitut
-            ProfessorSubstitut professorSubstitut = new ProfessorSubstitut();
-            professorSubstitut.assignarSubstitucio(new SimpleDateFormat("yyyy-MM-dd").parse("2022-04-01"), new SimpleDateFormat("yyyy-MM-dd").parse("2022-05-20"));
+            ProfessorSubstitut professorSubstitut1 = new ProfessorSubstitut();
+            professorSubstitut1.assignarSubstitucio(new SimpleDateFormat("yyyy-MM-dd").parse("2022-01-10"), new SimpleDateFormat("yyyy-MM-dd").parse("2022-06-30"));
 
-            professorSubstitut.canviarNom("Laura");
-            professorSubstitut.assignarDni("66677788L");
-            professorSubstitut.canviarSou(1923.87);
+            professorSubstitut1.canviarNomPersona("Laura");
+            professorSubstitut1.assignarDni("66677788L");
+            professorSubstitut1.canviarSou(1923.87);
 
-            // Institut
-            Institut institut = new Institut();
+            // Afegim persones a l'institut
+            institut1.afegirPersona(professor1);
+            institut1.afegirPersona(estudiant1);
+            institut1.afegirPersona(estudiant2);
+            institut1.afegirPersona(professorSubstitut1);
 
-            institut.afegirProfe(professor);
-            institut.afegirEstudiant(estudiant1);
-            institut.afegirEstudiant(estudiant2);
-            institut.afegirProfe(professorSubstitut);
+            // Proves i excepcions
+            Persona persona2 = new Persona();
 
-            institut.imprimirInformacio();
+            persona2.canviarNomPersona("Lucas");
+            persona2.assignarDni("55779911L");
+            persona2.assignarDni("77779911L");
 
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+
+            Professor professor2 = new Professor();
+
+            professor2.canviarNomPersona("Michael");
+            professor2.assignarDni("77993311M");
+            //professor2.canviarSou(3500d);
+            //professor2.canviarSou(-5000.5);
+
+
+            Estudiant estudiant3 = new Estudiant();
+
+            estudiant3.canviarNomPersona("Aitor");
+            estudiant3.assignarDni("64649797A");
+            estudiant3.posarNota("Docker", 4.5);
+            estudiant3.posarNota("Python", 3d);
+            estudiant3.posarNota("Java", 3d);
+            estudiant3.posarNota("JavaString", 3d);
+            estudiant3.posarNota("StackOverFlow", 9.9);
+            estudiant3.calculaNotaMesAlta();
+            estudiant3.calculaNotaMesBaixa();
+            estudiant3.calculaNotaMitjana();
+
+
+            Persona persona3 = new Persona();
+
+            persona3.canviarNomPersona("Pepito");
+
+
+            Persona persona4 = new Persona();
+
+            persona4.assignarDni("64973152P");
 
     }
 

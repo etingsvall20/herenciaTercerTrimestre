@@ -13,10 +13,8 @@ public class ProfessorSubstitut extends Professor {
     }
 
     @Override
-    public void obtenirDades () throws Exception {
-        super.obtenirDades();
-        System.out.println("Inici: " + this.dataInici);
-        System.out.println("Fi: " + this.dataFi);
+    public String obtenirDades () throws Exception {
+        return super.obtenirDades() + "Inici: " + this.dataInici + "Fi: " + this.dataFi;
     }
 
 }
