@@ -23,7 +23,7 @@ public class Estudiant extends Persona {
         StringBuilder assignatures = new StringBuilder();
 
         for (Map.Entry<String, Double> entry : nota.entrySet()) {
-            assignatures.append("Assignatura: ").append(entry.getKey()).append("Nota: ").append(entry.getValue());
+            assignatures.append("\nAssignatura: ").append(entry.getKey()).append("\nNota: ").append(entry.getValue()).append("\n");
         }
 
         return super.obtenirDades() + assignatures;

@@ -7,7 +7,7 @@ public class Persona {
     private boolean registre = false;
 
     public void canviarNomPersona(String nomAssignat) {
-        nomAssignat = this.nom;
+        this.nom = nomAssignat;
     }
 
     public void assignarDni(String dniAssignat) throws Exception {
@@ -16,7 +16,7 @@ public class Persona {
             throw new Exception ("No es pot canviar un dni ja assignat.");
         }
 
-        dniAssignat = this.dni;
+        this.dni = dniAssignat;
 
     }
 
@@ -30,7 +30,7 @@ public class Persona {
             throw new Exception("Aquesta persona no ha facilitat dni.");
         }
 
-        return "Nom: " + this.nom + "Dni: " + this.dni;
+        return "Nom: " + this.nom + "\nDni: " + this.dni + "\n";
 
     }
 

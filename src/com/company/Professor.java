@@ -10,13 +10,13 @@ public class Professor extends Persona{
             throw new Exception ("Sou incorrecte.");
         }
 
-        souAssignat = this.sou;
+        this.sou = souAssignat;
 
     }
 
     @Override
     public String obtenirDades() throws Exception {
-        return super.obtenirDades() + "Sou: " + this.sou;
+        return super.obtenirDades() + "Sou: " + this.sou + "\n";
     }
 
 }

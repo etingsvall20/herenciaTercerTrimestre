@@ -14,7 +14,7 @@ public class ProfessorSubstitut extends Professor {
 
     @Override
     public String obtenirDades () throws Exception {
-        return super.obtenirDades() + "Inici: " + this.dataInici + "Fi: " + this.dataFi;
+        return super.obtenirDades() + "\nInici: " + this.dataInici + "\nFi: " + this.dataFi + "\n";
     }
 
 }

@@ -14,7 +14,7 @@ public class Institut {
     }
 
     public String obtenirNom() {
-        return this.nomInstitut;
+        return "\nNom del institut: " + this.nomInstitut + "\n";
     }
 
     private final List<Persona> persones = new ArrayList<>();
@@ -26,7 +26,7 @@ public class Institut {
         if (persones.stream().count() == 0) {
             impresio = "No hi han registrats ni professors ni alumnes";
         } else {
-            impresio = this.nomInstitut + " té registrades a les següents persones: ";
+            impresio = this.nomInstitut + " te registrades aquestes persones:\n";
 
             for (Persona persona : this.persones) {
 
@@ -34,7 +34,7 @@ public class Institut {
                     persona.setRegistre(true);
                 }
 
-                impresio += persona.obtenirDades();
+                impresio += persona.obtenirDades() + "\n";
 
             }
 
